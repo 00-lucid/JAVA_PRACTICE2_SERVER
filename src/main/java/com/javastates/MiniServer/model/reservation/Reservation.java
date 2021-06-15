@@ -12,9 +12,19 @@ public class Reservation {
     private String userName;
     private String movieName;
     private Date createDate;
-    private String seat;
+    private int seat;
 
-    public Reservation(String userName, String movieName, Date createDate, String seat) {
+    @Override
+    public String toString() {
+        return "Reservation{" +
+                "userName='" + userName + '\'' +
+                ", movieName='" + movieName + '\'' +
+                ", createDate=" + createDate +
+                ", seat=" + seat +
+                '}';
+    }
+
+    public Reservation(String userName, String movieName, Date createDate, int seat) {
         this.userName = userName;
         this.movieName = movieName;
         this.createDate = createDate;

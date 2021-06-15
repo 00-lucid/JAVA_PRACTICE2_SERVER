@@ -12,7 +12,7 @@ public class ReservationMemoryRespository implements ReservationRespository{
         for(int i = 0; i < 5; i++) {
             UUID id = UUID.randomUUID();
             System.out.println(id);
-            put(id, new Reservation("name" + i, "어벤져스", new Date(), "A" + i));
+            put(id, new Reservation("name" + i, "어벤져스", new Date(), i));
         }
     }};
 

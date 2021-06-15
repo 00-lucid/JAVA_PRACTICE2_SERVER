@@ -28,6 +28,7 @@ public class ReservationController {
 
     @PostMapping(value = "/reservation")
     private void addReservation(@RequestBody Reservation reservation) {
+        System.out.println("여기여기여기여기여기여기여기여기여기여기" + reservation.toString());
         reservationService.join(reservation);
     }
 }

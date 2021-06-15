@@ -4,5 +4,6 @@ public enum Genre {
     Action,
     SF,
     Romantic,
-    Horror
+    Horror,
+    Animation
 }
