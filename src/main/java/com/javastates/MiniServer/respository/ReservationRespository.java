@@ -10,4 +10,6 @@ public interface ReservationRespository {
     Reservation findReservationById(UUID uuid);
 
     ArrayList<Reservation> findAllReservation();
+
+    ArrayList<Reservation> findMovieReservation(String movieName);
 }

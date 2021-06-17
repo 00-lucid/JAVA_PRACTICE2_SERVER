@@ -10,4 +10,6 @@ public interface ReservationService {
     Reservation findById(UUID uuid);
 
     ArrayList<Reservation> findAllReservation();
+
+    ArrayList<Integer> getArrMovieSeat(String movieName);
 }

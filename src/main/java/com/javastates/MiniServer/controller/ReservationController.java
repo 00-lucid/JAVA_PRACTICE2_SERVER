@@ -31,4 +31,9 @@ public class ReservationController {
         System.out.println("여기여기여기여기여기여기여기여기여기여기" + reservation.toString());
         reservationService.join(reservation);
     }
+
+    @GetMapping(value = "/reservation/seat")
+    private ArrayList<Integer> getMovieReservationSeat(@RequestParam String movieName) {
+        return reservationService.getArrMovieSeat(movieName);
+    }
 }

@@ -24,4 +24,13 @@ public class ReservationServiceImpl implements ReservationService{
     public ArrayList<Reservation> findAllReservation() {
         return reservationRespository.findAllReservation();
     }
+
+    public ArrayList<Integer> getArrMovieSeat(String movieName) {
+        ArrayList<Reservation> reservationArrayList = reservationRespository.findMovieReservation(movieName);
+        ArrayList<Integer> resultArr = new ArrayList<>();
+        // 생성하는 resultArr과 forEach 메소드를 이용하는 것이 아닌 stream + map으로 해결할 수 없을까?
+        reservationArrayList.forEach(reservation -> resultArr.add(reservation.getSeat() - 1));
+
+        return resultArr;
+    }
 }
