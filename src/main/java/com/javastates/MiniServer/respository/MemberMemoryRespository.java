@@ -1,9 +1,11 @@
 package com.javastates.MiniServer.respository;
 
 import com.javastates.MiniServer.model.member.Member;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 
+@Component
 public class MemberMemoryRespository implements MemberRespository{
 
     // immutable한 더미 데이터

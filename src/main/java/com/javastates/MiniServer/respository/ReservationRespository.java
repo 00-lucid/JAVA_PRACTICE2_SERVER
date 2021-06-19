@@ -1,9 +1,11 @@
 package com.javastates.MiniServer.respository;
 
 import com.javastates.MiniServer.model.reservation.Reservation;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 
+@Component
 public interface ReservationRespository {
     void save(Reservation reservation);
 

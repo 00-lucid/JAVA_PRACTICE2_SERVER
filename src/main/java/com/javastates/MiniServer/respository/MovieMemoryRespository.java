@@ -2,9 +2,11 @@ package com.javastates.MiniServer.respository;
 
 import com.javastates.MiniServer.model.movie.Genre;
 import com.javastates.MiniServer.model.movie.Movie;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 
+@Component
 public class MovieMemoryRespository implements MovieRespository{
 
     // immutable한 더미 데이터

@@ -3,6 +3,8 @@ package com.javastates.MiniServer.controller;
 import com.javastates.MiniServer.model.reservation.Reservation;
 import com.javastates.MiniServer.service.ReservationService;
 import com.javastates.MiniServer.service.ReservationServiceImpl;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,9 +14,11 @@ import java.util.UUID;
 @Controller
 @ResponseBody
 @CrossOrigin(origins = "*", maxAge = 3600)
+@Component
+@RequiredArgsConstructor
 public class ReservationController {
 
-    ReservationService reservationService = new ReservationServiceImpl();
+    private final ReservationService reservationService;
 
     @GetMapping(value = "/reservation")
     private Reservation getReservation(@RequestParam UUID uuid) {

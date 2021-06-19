@@ -1,10 +1,10 @@
 package com.javastates.MiniServer.model.movie;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
+@ToString
 public class Movie {
     private String movieName;
     private Genre movieGenre;

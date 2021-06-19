@@ -1,10 +1,10 @@
 package com.javastates.MiniServer.model.member;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
+@ToString
 public class Member {
     private String userId;
     private String userPw;

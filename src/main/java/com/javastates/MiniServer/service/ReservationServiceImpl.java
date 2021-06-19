@@ -1,14 +1,17 @@
 package com.javastates.MiniServer.service;
 
 import com.javastates.MiniServer.model.reservation.Reservation;
-import com.javastates.MiniServer.respository.ReservationMemoryRespository;
 import com.javastates.MiniServer.respository.ReservationRespository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 
+@Component
+@RequiredArgsConstructor
 public class ReservationServiceImpl implements ReservationService{
 
-    ReservationRespository reservationRespository = new ReservationMemoryRespository();
+    private final ReservationRespository reservationRespository;
 
     @Override
     public void join(Reservation reservation) {

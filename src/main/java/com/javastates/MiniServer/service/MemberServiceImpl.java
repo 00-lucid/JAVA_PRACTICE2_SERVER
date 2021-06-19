@@ -1,15 +1,18 @@
 package com.javastates.MiniServer.service;
 
 import com.javastates.MiniServer.model.member.Member;
-import com.javastates.MiniServer.respository.MemberMemoryRespository;
 import com.javastates.MiniServer.respository.MemberRespository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.UUID;
 
+@Component
+@RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService{
 
-    MemberRespository memberRespository = new MemberMemoryRespository();
+    private final MemberRespository memberRespository;
 
     @Override
     public void join(Member member) {

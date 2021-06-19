@@ -3,9 +3,11 @@ package com.javastates.MiniServer.respository;
 import com.javastates.MiniServer.model.member.Member;
 import com.javastates.MiniServer.model.movie.Movie;
 import com.javastates.MiniServer.model.reservation.Reservation;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 
+@Component
 public class ReservationMemoryRespository implements ReservationRespository{
 
     Map<UUID, Reservation> uuidReservationMap = new HashMap<>() {{

@@ -3,13 +3,16 @@ package com.javastates.MiniServer.service;
 import com.javastates.MiniServer.model.movie.Movie;
 import com.javastates.MiniServer.respository.MovieMemoryRespository;
 import com.javastates.MiniServer.respository.MovieRespository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 
+@Component
+@RequiredArgsConstructor
 public class MovieServiceImpl implements MovieService {
 
-    // 스프링 컨테이너 Bean을 이용해야 됨 (자동등록)
-    private MovieRespository movieRespository = new MovieMemoryRespository();
+    private final MovieRespository movieRespository;
 
     @Override
     public void join(Movie movie) {
