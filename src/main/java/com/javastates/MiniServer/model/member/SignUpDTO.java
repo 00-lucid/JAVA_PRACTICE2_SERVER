@@ -1,18 +1,18 @@
 package com.javastates.MiniServer.model.member;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.ToString;
 
 @Getter
-@Setter
 @ToString
-public class Member {
-    private String userPw;
+public class SignUpDTO {
     private String userName;
+    private String userPw;
     private int userAge;
 
-    public Member(String userPw, String userName, int userAge) {
-        this.userPw = userPw;
+    public SignUpDTO(String userName, String userPw, int userAge) {
         this.userName = userName;
+        this.userPw = userPw;
         this.userAge = userAge;
     }
 }

@@ -1,6 +1,15 @@
 package com.javastates.MiniServer.service;
 
 
+import com.javastates.MiniServer.model.member.Member;
+import com.javastates.MiniServer.model.member.SignUpDTO;
+
+import java.util.UUID;
+
 public interface AuthService {
-    boolean validate(String userName, String userPw);
+
+    String validate(String userName, String userPw);
+
+
+
 }

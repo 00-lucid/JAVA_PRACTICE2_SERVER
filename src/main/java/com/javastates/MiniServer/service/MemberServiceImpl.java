@@ -1,6 +1,7 @@
 package com.javastates.MiniServer.service;
 
 import com.javastates.MiniServer.model.member.Member;
+import com.javastates.MiniServer.model.member.SignUpDTO;
 import com.javastates.MiniServer.respository.MemberRespository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -27,5 +28,20 @@ public class MemberServiceImpl implements MemberService{
     @Override
     public ArrayList<Member> findAllMember() {
         return memberRespository.findAllMember();
+    }
+
+    public Member updateMember(UUID uuid, String newName) {
+        return memberRespository.update(uuid, newName);
+    }
+
+    @Override
+    public Member removeMember(UUID uuid) {
+        return memberRespository.remove(uuid);
+    }
+
+    @Override
+    public UUID addMember(SignUpDTO signUpDTO) {
+        Member member = new Member(signUpDTO.getUserPw(), signUpDTO.getUserName(), signUpDTO.getUserAge());
+        return memberRespository.save(member);
     }
 }

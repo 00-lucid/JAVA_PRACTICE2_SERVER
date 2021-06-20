@@ -11,8 +11,7 @@ public class MemberTest {
     @Test
     @DisplayName("Check Create Member")
     void test1() {
-        Member member = new Member("id", "pw", "name", 12);
-        assertThat(member.getUserId()).isEqualTo("id");
+        Member member = new Member("pw", "name", 12);
         assertThat(member.getUserPw()).isEqualTo("pw");
         assertThat(member.getUserName()).isEqualTo("name");
         assertThat(member.getUserAge()).isEqualTo(12);

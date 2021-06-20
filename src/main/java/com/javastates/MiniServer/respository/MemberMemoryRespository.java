@@ -1,5 +1,6 @@
 package com.javastates.MiniServer.respository;
 
+import com.javastates.MiniServer.model.member.LoginDTO;
 import com.javastates.MiniServer.model.member.Member;
 import org.springframework.stereotype.Component;
 
@@ -9,17 +10,15 @@ import java.util.*;
 public class MemberMemoryRespository implements MemberRespository{
 
     // immutable한 더미 데이터
-    Map<UUID, Member> uuidMemberMap = new HashMap<>() {{
-        for(int i = 0; i < 5; i++) {
-            UUID id = UUID.randomUUID();
-            System.out.println(id);
-            put(id, new Member("id" + i, "pw" + i, "name" + i, i*10));
-        }
-    }};
-
+    Map<UUID, Member> uuidMemberMap = new HashMap<>();
     @Override
-    public void save(Member member) {
-        uuidMemberMap.put(UUID.randomUUID(), member);
+    public UUID save(Member member) {
+        if (!uuidMemberMap.containsValue(member)) {
+            UUID uuid = UUID.randomUUID();
+            uuidMemberMap.put(uuid, member);
+            return uuid;
+        }
+        return null;
     }
 
     @Override
@@ -38,5 +37,28 @@ public class MemberMemoryRespository implements MemberRespository{
         }
 
         return memberArrayList;
+    }
+
+    @Override
+    public Member remove(UUID uuid) {
+        return uuidMemberMap.remove(uuid);
+    }
+
+
+    public String getToken(String userName, String userPw) {
+        for (Map.Entry entry : uuidMemberMap.entrySet()) {
+            String memberStr = entry.getValue().toString();
+            if (memberStr.contains(userName) && memberStr.contains(userPw)) {
+                return entry.getKey().toString();
+            }
+        }
+
+        return null;
+    }
+
+    public Member update(UUID uuid, String newName) {
+        Member member = uuidMemberMap.get(uuid);
+        member.setUserName(newName);
+        return member;
     }
 }

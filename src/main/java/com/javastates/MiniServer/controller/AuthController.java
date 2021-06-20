@@ -1,15 +1,16 @@
 package com.javastates.MiniServer.controller;
 
 import com.javastates.MiniServer.model.member.LoginDTO;
+import com.javastates.MiniServer.model.member.Member;
+import com.javastates.MiniServer.model.member.SignUpDTO;
 import com.javastates.MiniServer.service.AuthService;
-import com.javastates.MiniServer.service.AuthServiceImpl;
+import com.javastates.MiniServer.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @Controller
 @ResponseBody
@@ -19,8 +20,36 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class AuthController {
 
     private final AuthService authService;
-    @PostMapping()
-    public boolean login(@RequestBody LoginDTO loginDTO) {
+    private final MemberService memberService;
+
+    @PostMapping(value = "login")
+    public String login(@RequestBody LoginDTO loginDTO) {
+        System.out.println(loginDTO);
         return authService.validate(loginDTO.getUserName(), loginDTO.getUserPw());
+    }
+
+    @PostMapping(value = "signup")
+    public UUID signup(@RequestBody SignUpDTO signUpDTO) {
+        System.out.println(signUpDTO);
+        return memberService.addMember(signUpDTO);
+    }
+
+    @DeleteMapping(value = "withdraw")
+    public boolean withdraw(@RequestHeader(value = "authorization") UUID token) {
+        System.out.println(token);
+        if (token.toString().isEmpty()) {
+            return false;
+        } else {
+            Member member = memberService.removeMember(token);
+            if (member.toString().isEmpty()) {
+                return false;
+            }
+            return true;
+        }
+    }
+
+    @PatchMapping(value = "update")
+    public Member update(@RequestHeader(value = "authorization") UUID token, @RequestBody String newName) {
+        return memberService.updateMember(token, newName);
     }
 }
