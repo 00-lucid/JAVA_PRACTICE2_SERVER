@@ -1,6 +1,6 @@
 package com.javastates.MiniServer.service;
 
-import com.javastates.MiniServer.model.movie.Movie;
+import com.javastates.MiniServer.domain.movie.Movie;
 
 import java.util.*;
 

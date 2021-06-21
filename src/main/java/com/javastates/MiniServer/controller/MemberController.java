@@ -1,8 +1,7 @@
 package com.javastates.MiniServer.controller;
 
-import com.javastates.MiniServer.model.member.Member;
+import com.javastates.MiniServer.domain.member.Member;
 import com.javastates.MiniServer.service.MemberService;
-import com.javastates.MiniServer.service.MemberServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;

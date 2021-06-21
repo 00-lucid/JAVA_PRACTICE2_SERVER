@@ -1,8 +1,7 @@
 package com.javastates.MiniServer.controller;
 
-import com.javastates.MiniServer.model.movie.Movie;
+import com.javastates.MiniServer.domain.movie.Movie;
 import com.javastates.MiniServer.service.MovieService;
-import com.javastates.MiniServer.service.MovieServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;

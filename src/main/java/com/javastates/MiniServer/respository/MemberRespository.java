@@ -1,7 +1,6 @@
 package com.javastates.MiniServer.respository;
 
-import com.javastates.MiniServer.model.member.ConfigVO;
-import com.javastates.MiniServer.model.member.Member;
+import com.javastates.MiniServer.domain.member.Member;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package com.javastates.MiniServer.model.movie;
+package com.javastates.MiniServer.domain.movie;
 
 public enum Genre {
     Action,

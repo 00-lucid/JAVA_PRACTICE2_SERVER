@@ -1,6 +1,6 @@
 package com.javastates.MiniServer.Member;
 
-import com.javastates.MiniServer.model.member.Member;
+import com.javastates.MiniServer.domain.member.Member;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

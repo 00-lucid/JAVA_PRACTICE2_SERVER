@@ -1,4 +1,4 @@
-package com.javastates.MiniServer.model.member;
+package com.javastates.MiniServer.domain.member;
 
 import lombok.*;
 

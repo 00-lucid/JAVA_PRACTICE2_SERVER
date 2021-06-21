@@ -1,7 +1,6 @@
 package com.javastates.MiniServer.service;
 
-import com.javastates.MiniServer.model.movie.Movie;
-import com.javastates.MiniServer.respository.MovieMemoryRespository;
+import com.javastates.MiniServer.domain.movie.Movie;
 import com.javastates.MiniServer.respository.MovieRespository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

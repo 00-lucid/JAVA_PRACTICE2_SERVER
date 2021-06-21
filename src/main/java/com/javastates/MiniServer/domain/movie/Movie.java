@@ -1,4 +1,4 @@
-package com.javastates.MiniServer.model.movie;
+package com.javastates.MiniServer.domain.movie;
 
 import lombok.*;
 

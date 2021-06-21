@@ -1,8 +1,7 @@
 package com.javastates.MiniServer.controller;
 
-import com.javastates.MiniServer.model.reservation.Reservation;
+import com.javastates.MiniServer.domain.reservation.Reservation;
 import com.javastates.MiniServer.service.ReservationService;
-import com.javastates.MiniServer.service.ReservationServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;

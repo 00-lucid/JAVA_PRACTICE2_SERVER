@@ -1,6 +1,6 @@
 package com.javastates.MiniServer.service;
 
-import com.javastates.MiniServer.model.reservation.Reservation;
+import com.javastates.MiniServer.domain.reservation.Reservation;
 
 import java.util.*;
 import java.util.stream.Stream;

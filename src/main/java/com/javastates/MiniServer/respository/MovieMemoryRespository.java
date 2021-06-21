@@ -1,7 +1,7 @@
 package com.javastates.MiniServer.respository;
 
-import com.javastates.MiniServer.model.movie.Genre;
-import com.javastates.MiniServer.model.movie.Movie;
+import com.javastates.MiniServer.domain.movie.Genre;
+import com.javastates.MiniServer.domain.movie.Movie;
 import org.springframework.stereotype.Component;
 
 import java.util.*;

@@ -1,8 +1,7 @@
 package com.javastates.MiniServer.service;
 
-import com.javastates.MiniServer.model.member.ConfigVO;
-import com.javastates.MiniServer.model.member.Member;
-import com.javastates.MiniServer.model.member.SignUpDTO;
+import com.javastates.MiniServer.domain.member.Member;
+import com.javastates.MiniServer.domain.member.SignUpDTO;
 import com.javastates.MiniServer.respository.MemberRespository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

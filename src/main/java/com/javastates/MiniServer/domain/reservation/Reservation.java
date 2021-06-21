@@ -1,4 +1,4 @@
-package com.javastates.MiniServer.model.reservation;
+package com.javastates.MiniServer.domain.reservation;
 
 import lombok.*;
 import java.util.Date;

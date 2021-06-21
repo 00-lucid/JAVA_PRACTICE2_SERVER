@@ -1,9 +1,8 @@
 package com.javastates.MiniServer.controller;
 
-import com.javastates.MiniServer.model.member.ConfigVO;
-import com.javastates.MiniServer.model.member.LoginDTO;
-import com.javastates.MiniServer.model.member.Member;
-import com.javastates.MiniServer.model.member.SignUpDTO;
+import com.javastates.MiniServer.domain.member.LoginDTO;
+import com.javastates.MiniServer.domain.member.Member;
+import com.javastates.MiniServer.domain.member.SignUpDTO;
 import com.javastates.MiniServer.service.AuthService;
 import com.javastates.MiniServer.service.MemberService;
 import lombok.RequiredArgsConstructor;
