@@ -16,24 +16,40 @@ public class ReservationServiceImpl implements ReservationService{
 
     @Override
     public void join(Reservation reservation) {
-        reservationRespository.save(reservation);
+        try {
+            reservationRespository.save(reservation);
+        } catch (Exception e) {
+            return;
+        }
     }
 
     @Override
     public Reservation findById(UUID uuid) {
-        return reservationRespository.findReservationById(uuid);
+        try {
+            return reservationRespository.findReservationById(uuid);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
     public ArrayList<Reservation> findAllReservation() {
-        return reservationRespository.findAllReservation();
+        try {
+            return reservationRespository.findAllReservation();
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
     public Stream<Integer> getArrMovieSeat(String movieName) {
-        ArrayList<Reservation> reservationArrayList = reservationRespository.findMovieReservation(movieName);
-        Stream<Integer> result = reservationArrayList.stream()
-                .map(reservation -> reservation.getSeat() - 1);
-        return result;
+        try {
+            ArrayList<Reservation> reservationArrayList = reservationRespository.findMovieReservation(movieName);
+            Stream<Integer> result = reservationArrayList.stream()
+                    .map(reservation -> reservation.getSeat() - 1);
+            return result;
+        } catch (Exception e) {
+            return null;
+        }
     }
 }

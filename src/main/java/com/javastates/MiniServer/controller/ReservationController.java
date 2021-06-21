@@ -23,21 +23,37 @@ public class ReservationController {
 
     @GetMapping(value = "/reservation")
     private Reservation getReservation(@RequestParam UUID uuid) {
-        return reservationService.findById(uuid);
+        try {
+            return reservationService.findById(uuid);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @GetMapping(value = "/reservations")
     private ArrayList<Reservation> getReservations() {
-        return reservationService.findAllReservation();
+        try {
+            return reservationService.findAllReservation();
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @PostMapping(value = "/reservation")
     private void addReservation(@RequestBody Reservation reservation) {
-        reservationService.join(reservation);
+        try {
+            reservationService.join(reservation);
+        } catch (Exception e) {
+            return;
+        }
     }
 
     @GetMapping(value = "/reservation/seat")
     private Stream<Integer> getMovieReservationSeat(@RequestParam String movieName) {
-        return reservationService.getArrMovieSeat(movieName);
+        try {
+            return reservationService.getArrMovieSeat(movieName);
+        } catch (Exception e) {
+            return null;
+        }
     }
 }

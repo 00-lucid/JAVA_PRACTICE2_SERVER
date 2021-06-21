@@ -38,23 +38,35 @@ public class MovieMemoryRespository implements MovieRespository{
 
     @Override
     public void save(Movie movie) {
-        uuidMovieMap.put(UUID.randomUUID(), movie);
+        try {
+            uuidMovieMap.put(UUID.randomUUID(), movie);
+        } catch (Exception e) {
+            return;
+        }
     }
 
     @Override
     public Movie findMovieById(UUID uuid) {
-        return uuidMovieMap.get(uuid);
+        try {
+            return uuidMovieMap.get(uuid);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
     public ArrayList<Movie> findAllMovie() {
-        ArrayList<Movie> movieArrayList = new ArrayList<>();
+        try {
+            ArrayList<Movie> movieArrayList = new ArrayList<>();
 
-        for (UUID key : uuidMovieMap.keySet()) {
-            // key를 바탕으로 값을 받아와서 새로운 ArrayList에 넣는다.
-            movieArrayList.add(uuidMovieMap.get(key));
+            for (UUID key : uuidMovieMap.keySet()) {
+                // key를 바탕으로 값을 받아와서 새로운 ArrayList에 넣는다.
+                movieArrayList.add(uuidMovieMap.get(key));
+            }
+
+            return movieArrayList;
+        } catch (Exception e) {
+            return null;
         }
-
-        return movieArrayList;
     }
 }

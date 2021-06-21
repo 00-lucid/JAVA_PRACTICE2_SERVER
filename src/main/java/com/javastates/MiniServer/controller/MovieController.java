@@ -21,16 +21,28 @@ public class MovieController {
 
     @GetMapping(value = "/movie")
     private Movie getMovie(@RequestParam UUID uuid) {
-        return movieService.findById(uuid);
+        try {
+            return movieService.findById(uuid);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @GetMapping(value = "/movies")
     private ArrayList<Movie> getMovies() {
-        return movieService.findAllMovie();
+        try {
+            return movieService.findAllMovie();
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @PostMapping(value = "/movie")
     private void addMovie(@RequestBody Movie movie) {
-        movieService.join(movie);
+        try {
+            movieService.join(movie);
+        } catch (Exception e) {
+            return;
+        }
     }
 }

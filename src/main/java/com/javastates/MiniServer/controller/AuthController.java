@@ -25,38 +25,58 @@ public class AuthController {
 
     @PostMapping(value = "login")
     public String login(@RequestBody LoginDTO loginDTO) {
-        System.out.println(loginDTO);
-        return authService.validate(loginDTO.getUserName(), loginDTO.getUserPw());
+        try {
+            System.out.println(loginDTO);
+            return authService.validate(loginDTO.getUserName(), loginDTO.getUserPw());
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @PostMapping(value = "signup")
     public UUID signup(@RequestBody SignUpDTO signUpDTO) {
-        System.out.println(signUpDTO);
-        return memberService.addMember(signUpDTO);
+        try {
+            System.out.println(signUpDTO);
+            return memberService.addMember(signUpDTO);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @DeleteMapping(value = "withdraw")
     public boolean withdraw(@RequestHeader(value = "authorization") UUID token) {
-        System.out.println(token);
-        if (token.toString().isEmpty()) {
-            return false;
-        } else {
-            Member member = memberService.removeMember(token);
-            if (member.toString().isEmpty()) {
+        try {
+            System.out.println(token);
+            if (token.toString().isEmpty()) {
                 return false;
+            } else {
+                Member member = memberService.removeMember(token);
+                if (member.toString().isEmpty()) {
+                    return false;
+                }
+                return true;
             }
-            return true;
+        } catch (Exception e) {
+            return false;
         }
     }
 
     @PatchMapping(value = "update")
     public Member update(@RequestHeader(value = "authorization") UUID token, @RequestBody Object object) {
-        System.out.println(object);
-        return memberService.updateMember(token, object);
+        try {
+            System.out.println(object);
+            return memberService.updateMember(token, object);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @GetMapping(value = "info")
     public Member getInfo(@RequestHeader(value = "authorization") UUID token) {
-        return memberService.findById(token);
+        try {
+            return memberService.findById(token);
+        } catch (Exception e) {
+            return null;
+        }
     }
 }

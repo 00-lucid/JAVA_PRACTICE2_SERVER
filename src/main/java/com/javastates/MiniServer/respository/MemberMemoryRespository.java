@@ -14,53 +14,76 @@ public class MemberMemoryRespository implements MemberRespository{
 
     @Override
     public UUID save(Member member) {
-        if (!uuidMemberMap.containsValue(member)) {
-            UUID uuid = UUID.randomUUID();
-            uuidMemberMap.put(uuid, member);
-            return uuid;
+        try {
+            if (!uuidMemberMap.containsValue(member)) {
+                UUID uuid = UUID.randomUUID();
+                uuidMemberMap.put(uuid, member);
+                return uuid;
+            }
+            return null;
+        } catch (Exception e) {
+            return null;
         }
-        return null;
     }
 
     @Override
     public Member findMemberById(UUID uuid) {
-        return uuidMemberMap.get(uuid);
+        try {
+            return uuidMemberMap.get(uuid);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
     public ArrayList<Member> findAllMember() {
+        try {
+            ArrayList<Member> memberArrayList = new ArrayList<>();
 
-        ArrayList<Member> memberArrayList = new ArrayList<>();
+            for (UUID key : uuidMemberMap.keySet()) {
+                // key를 바탕으로 값을 받아와서 새로운 ArrayList에 넣는다.
+                memberArrayList.add(uuidMemberMap.get(key));
+            }
 
-        for (UUID key : uuidMemberMap.keySet()) {
-            // key를 바탕으로 값을 받아와서 새로운 ArrayList에 넣는다.
-            memberArrayList.add(uuidMemberMap.get(key));
+            return memberArrayList;
+        } catch (Exception e) {
+            return null;
         }
-
-        return memberArrayList;
     }
 
     @Override
     public Member remove(UUID uuid) {
-        return uuidMemberMap.remove(uuid);
+        try {
+            return uuidMemberMap.remove(uuid);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
 
     public String getToken(String userName, String userPw) {
-        for (Map.Entry entry : uuidMemberMap.entrySet()) {
-            String memberStr = entry.getValue().toString();
-            if (memberStr.contains(userName) && memberStr.contains(userPw)) {
-                return entry.getKey().toString();
+        try {
+            for (Map.Entry entry : uuidMemberMap.entrySet()) {
+                String memberStr = entry.getValue().toString();
+                if (memberStr.contains(userName) && memberStr.contains(userPw)) {
+                    return entry.getKey().toString();
+                }
             }
-        }
 
-        return null;
+            return null;
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
     public Member update(UUID uuid, Object object) {
-        Member member = uuidMemberMap.get(uuid);
-        member.setUserName(object.toString());
-        return member;
+        try {
+            Member member = uuidMemberMap.get(uuid);
+            member.setUserName(object.toString());
+            return member;
+        } catch (Exception e) {
+            return null;
+        }
     }
 }

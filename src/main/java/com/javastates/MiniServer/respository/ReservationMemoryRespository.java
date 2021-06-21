@@ -13,24 +13,35 @@ public class ReservationMemoryRespository implements ReservationRespository{
     Map<UUID, Reservation> uuidReservationMap = new HashMap<>();
     @Override
     public void save(Reservation reservation) {
-        uuidReservationMap.put(UUID.randomUUID(), reservation);
+        try {
+            uuidReservationMap.put(UUID.randomUUID(), reservation);
+        } catch (Exception e) {
+            return;
+        }
     }
 
     @Override
     public Reservation findReservationById(UUID uuid) {
-        return uuidReservationMap.get(uuid);
+        try {
+            return uuidReservationMap.get(uuid);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
     public ArrayList<Reservation> findAllReservation() {
-        ArrayList<Reservation> reservationArrayList = new ArrayList<>();
+        try {
+            ArrayList<Reservation> reservationArrayList = new ArrayList<>();
 
-        for (UUID key : uuidReservationMap.keySet()) {
-            // key를 바탕으로 값을 받아와서 새로운 ArrayList에 넣는다.
-            reservationArrayList.add(uuidReservationMap.get(key));
+            for (UUID key : uuidReservationMap.keySet()) {
+                reservationArrayList.add(uuidReservationMap.get(key));
+            }
+
+            return reservationArrayList;
+        } catch (Exception e) {
+            return null;
         }
-
-        return reservationArrayList;
     }
 
     // 특정 영화의 예약정보([1, 2, 3])을 가져오는 함수가 필요하다.
@@ -39,15 +50,19 @@ public class ReservationMemoryRespository implements ReservationRespository{
 
     @Override
     public ArrayList<Reservation> findMovieReservation(String movieName) {
-        ArrayList<Reservation> reservationArrayList = new ArrayList<>();
+        try {
+            ArrayList<Reservation> reservationArrayList = new ArrayList<>();
 
-        for (UUID key : uuidReservationMap.keySet()) {
-            Reservation reservation = uuidReservationMap.get(key);
-            if (reservation.getMovieName().equals(movieName)) {
-                reservationArrayList.add(reservation);
+            for (UUID key : uuidReservationMap.keySet()) {
+                Reservation reservation = uuidReservationMap.get(key);
+                if (reservation.getMovieName().equals(movieName)) {
+                    reservationArrayList.add(reservation);
+                }
             }
-        }
 
-        return reservationArrayList;
+            return reservationArrayList;
+        } catch (Exception e) {
+            return null;
+        }
     }
 }

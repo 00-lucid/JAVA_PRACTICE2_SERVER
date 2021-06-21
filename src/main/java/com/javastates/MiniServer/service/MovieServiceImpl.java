@@ -16,16 +16,28 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public void join(Movie movie) {
-        movieRespository.save(movie);
+        try {
+            movieRespository.save(movie);
+        } catch (Exception e) {
+            return;
+        }
     }
 
     @Override
     public Movie findById(UUID uuid) {
-        return movieRespository.findMovieById(uuid);
+        try {
+            return movieRespository.findMovieById(uuid);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
     public ArrayList<Movie> findAllMovie() {
-        return movieRespository.findAllMovie();
+        try {
+            return movieRespository.findAllMovie();
+        } catch (Exception e) {
+            return null;
+        }
     }
 }

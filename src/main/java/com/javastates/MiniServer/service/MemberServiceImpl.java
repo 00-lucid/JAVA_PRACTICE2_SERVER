@@ -18,32 +18,56 @@ public class MemberServiceImpl implements MemberService{
 
     @Override
     public void join(Member member) {
-        memberRespository.save(member);
+        try {
+            memberRespository.save(member);
+        } catch (Exception e) {
+
+        }
     }
 
     @Override
     public Member findById(UUID uuid) {
-        return memberRespository.findMemberById(uuid);
+        try {
+            return memberRespository.findMemberById(uuid);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
     public ArrayList<Member> findAllMember() {
-        return memberRespository.findAllMember();
+        try {
+            return memberRespository.findAllMember();
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
     public Member updateMember(UUID uuid, Object object) {
-        return memberRespository.update(uuid, object);
+        try {
+            return memberRespository.update(uuid, object);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
     public Member removeMember(UUID uuid) {
-        return memberRespository.remove(uuid);
+        try {
+            return memberRespository.remove(uuid);
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
     public UUID addMember(SignUpDTO signUpDTO) {
-        Member member = new Member(signUpDTO.getUserPw(), signUpDTO.getUserName(), signUpDTO.getUserAge());
-        return memberRespository.save(member);
+        try {
+            Member member = new Member(signUpDTO.getUserPw(), signUpDTO.getUserName(), signUpDTO.getUserAge());
+            return memberRespository.save(member);
+        } catch (Exception e) {
+            return null;
+        }
     }
 }
