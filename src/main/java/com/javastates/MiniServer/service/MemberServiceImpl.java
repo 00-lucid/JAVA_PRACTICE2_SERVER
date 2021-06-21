@@ -1,5 +1,6 @@
 package com.javastates.MiniServer.service;
 
+import com.javastates.MiniServer.model.member.ConfigVO;
 import com.javastates.MiniServer.model.member.Member;
 import com.javastates.MiniServer.model.member.SignUpDTO;
 import com.javastates.MiniServer.respository.MemberRespository;
@@ -30,8 +31,9 @@ public class MemberServiceImpl implements MemberService{
         return memberRespository.findAllMember();
     }
 
-    public Member updateMember(UUID uuid, String newName) {
-        return memberRespository.update(uuid, newName);
+    @Override
+    public Member updateMember(UUID uuid, Object object) {
+        return memberRespository.update(uuid, object);
     }
 
     @Override

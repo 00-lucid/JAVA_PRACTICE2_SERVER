@@ -3,8 +3,7 @@ package com.javastates.MiniServer.model.reservation;
 import lombok.*;
 import java.util.Date;
 
-@Setter
-@Getter
+@Data
 public class Reservation {
     // 예약내역
     private String userName;

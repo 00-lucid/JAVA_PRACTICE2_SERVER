@@ -2,8 +2,7 @@ package com.javastates.MiniServer.model.movie;
 
 import lombok.*;
 
-@Getter
-@Setter
+@Data
 @ToString
 public class Movie {
     private String movieName;

@@ -1,5 +1,6 @@
 package com.javastates.MiniServer.controller;
 
+import com.javastates.MiniServer.model.member.ConfigVO;
 import com.javastates.MiniServer.model.member.LoginDTO;
 import com.javastates.MiniServer.model.member.Member;
 import com.javastates.MiniServer.model.member.SignUpDTO;
@@ -49,7 +50,13 @@ public class AuthController {
     }
 
     @PatchMapping(value = "update")
-    public Member update(@RequestHeader(value = "authorization") UUID token, @RequestBody String newName) {
-        return memberService.updateMember(token, newName);
+    public Member update(@RequestHeader(value = "authorization") UUID token, @RequestBody Object object) {
+        System.out.println(object);
+        return memberService.updateMember(token, object);
+    }
+
+    @GetMapping(value = "info")
+    public Member getInfo(@RequestHeader(value = "authorization") UUID token) {
+        return memberService.findById(token);
     }
 }

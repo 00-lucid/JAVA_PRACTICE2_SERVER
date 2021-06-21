@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.UUID;
+import java.util.stream.Stream;
 
 @Controller
 @ResponseBody
@@ -32,12 +33,11 @@ public class ReservationController {
 
     @PostMapping(value = "/reservation")
     private void addReservation(@RequestBody Reservation reservation) {
-        System.out.println("여기여기여기여기여기여기여기여기여기여기" + reservation.toString());
         reservationService.join(reservation);
     }
 
     @GetMapping(value = "/reservation/seat")
-    private ArrayList<Integer> getMovieReservationSeat(@RequestParam String movieName) {
+    private Stream<Integer> getMovieReservationSeat(@RequestParam String movieName) {
         return reservationService.getArrMovieSeat(movieName);
     }
 }

@@ -1,6 +1,6 @@
 package com.javastates.MiniServer.respository;
 
-import com.javastates.MiniServer.model.member.LoginDTO;
+import com.javastates.MiniServer.model.member.ConfigVO;
 import com.javastates.MiniServer.model.member.Member;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +11,7 @@ public class MemberMemoryRespository implements MemberRespository{
 
     // immutable한 더미 데이터
     Map<UUID, Member> uuidMemberMap = new HashMap<>();
+
     @Override
     public UUID save(Member member) {
         if (!uuidMemberMap.containsValue(member)) {
@@ -56,9 +57,10 @@ public class MemberMemoryRespository implements MemberRespository{
         return null;
     }
 
-    public Member update(UUID uuid, String newName) {
+    @Override
+    public Member update(UUID uuid, Object object) {
         Member member = uuidMemberMap.get(uuid);
-        member.setUserName(newName);
+        member.setUserName(object.toString());
         return member;
     }
 }

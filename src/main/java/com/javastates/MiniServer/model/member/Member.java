@@ -2,8 +2,7 @@ package com.javastates.MiniServer.model.member;
 
 import lombok.*;
 
-@Getter
-@Setter
+@Data
 @ToString
 public class Member {
     private String userPw;

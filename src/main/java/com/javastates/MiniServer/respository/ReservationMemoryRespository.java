@@ -10,14 +10,7 @@ import java.util.*;
 @Component
 public class ReservationMemoryRespository implements ReservationRespository{
 
-    Map<UUID, Reservation> uuidReservationMap = new HashMap<>() {{
-        for(int i = 0; i < 5; i++) {
-            UUID id = UUID.randomUUID();
-            System.out.println(id);
-            put(id, new Reservation("name" + i, "어벤져스", new Date(), i));
-        }
-    }};
-
+    Map<UUID, Reservation> uuidReservationMap = new HashMap<>();
     @Override
     public void save(Reservation reservation) {
         uuidReservationMap.put(UUID.randomUUID(), reservation);
