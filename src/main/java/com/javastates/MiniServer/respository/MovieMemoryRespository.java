@@ -38,25 +38,16 @@ public class MovieMemoryRespository implements MovieRespository{
 
     @Override
     public void save(Movie movie) {
-        try {
             uuidMovieMap.put(UUID.randomUUID(), movie);
-        } catch (Exception e) {
-            return;
-        }
     }
 
     @Override
     public Movie findMovieById(UUID uuid) {
-        try {
             return uuidMovieMap.get(uuid);
-        } catch (Exception e) {
-            return null;
-        }
     }
 
     @Override
     public ArrayList<Movie> findAllMovie() {
-        try {
             ArrayList<Movie> movieArrayList = new ArrayList<>();
 
             for (UUID key : uuidMovieMap.keySet()) {
@@ -65,8 +56,5 @@ public class MovieMemoryRespository implements MovieRespository{
             }
 
             return movieArrayList;
-        } catch (Exception e) {
-            return null;
-        }
     }
 }

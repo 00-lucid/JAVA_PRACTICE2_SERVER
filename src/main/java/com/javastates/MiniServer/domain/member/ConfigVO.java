@@ -8,6 +8,8 @@ import lombok.ToString;
 public class ConfigVO {
     private String userName;
 
+    public ConfigVO() {}
+
     public ConfigVO(String userName) {
         this.userName = userName;
     }

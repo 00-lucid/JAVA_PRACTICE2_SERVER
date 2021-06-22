@@ -21,28 +21,16 @@ public class MemberController {
 
     @GetMapping(value = "/member")
     private Member getMember(@RequestParam UUID uuid) {
-        try {
             return memberService.findById(uuid);
-        } catch (Exception e) {
-            return null;
-        }
     }
 
     @GetMapping(value = "/members")
     private ArrayList<Member> getMembers() {
-        try {
             return memberService.findAllMember();
-        } catch (Exception e) {
-            return null;
-        }
     }
 
     @PostMapping(value = "/member")
     private void addMember(@RequestBody Member member) {
-        try {
             memberService.join(member);
-        } catch (Exception e) {
-            return;
-        }
     }
 }

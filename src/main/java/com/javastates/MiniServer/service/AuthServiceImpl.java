@@ -12,11 +12,7 @@ public class AuthServiceImpl implements AuthService{
 
     @Override
     public String validate(String userName, String userPw) {
-        try {
             return memberRespository.getToken(userName, userPw);
-        } catch (Exception e) {
-            return null;
-        }
     }
 
 }

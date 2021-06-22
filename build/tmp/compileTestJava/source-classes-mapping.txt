@@ -1,0 +1,4 @@
+com/javastates/MiniServer/Member/MemberTest.java
+ com.javastates.MiniServer.Member.MemberTest
+com/javastates/MiniServer/MiniServerApplicationTests.java
+ com.javastates.MiniServer.MiniServerApplicationTests

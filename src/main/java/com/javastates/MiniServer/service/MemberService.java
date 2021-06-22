@@ -1,5 +1,6 @@
 package com.javastates.MiniServer.service;
 
+import com.javastates.MiniServer.domain.member.ConfigVO;
 import com.javastates.MiniServer.domain.member.Member;
 import com.javastates.MiniServer.domain.member.SignUpDTO;
 
@@ -14,7 +15,7 @@ public interface MemberService {
 
     ArrayList<Member> findAllMember();
 
-    Member updateMember(UUID uuid, Object object);
+    Member updateMember(UUID uuid, String userName);
 
     Member removeMember(UUID uuid);
 

@@ -1,55 +1,57 @@
-com/javastates/MiniServer/MiniServerApplication.java
- com.javastates.MiniServer.MiniServerApplication
-com/javastates/MiniServer/ServletInitializer.java
- com.javastates.MiniServer.ServletInitializer
-com/javastates/MiniServer/respository/ReservationMemoryRespository.java
- com.javastates.MiniServer.respository.ReservationMemoryRespository
-com/javastates/MiniServer/service/MemberService.java
- com.javastates.MiniServer.service.MemberService
 com/javastates/MiniServer/service/ReservationService.java
  com.javastates.MiniServer.service.ReservationService
 com/javastates/MiniServer/domain/member/LoginDTO.java
  com.javastates.MiniServer.domain.member.LoginDTO
-com/javastates/MiniServer/service/ReservationServiceImpl.java
- com.javastates.MiniServer.service.ReservationServiceImpl
-com/javastates/MiniServer/controller/MovieController.java
- com.javastates.MiniServer.controller.MovieController
-com/javastates/MiniServer/controller/AuthController.java
- com.javastates.MiniServer.controller.AuthController
-com/javastates/MiniServer/domain/member/SignUpDTO.java
- com.javastates.MiniServer.domain.member.SignUpDTO
 com/javastates/MiniServer/domain/movie/Genre.java
  com.javastates.MiniServer.domain.movie.Genre
+com/javastates/MiniServer/domain/movie/Movie.java
+ com.javastates.MiniServer.domain.movie.Movie
+com/javastates/MiniServer/domain/member/Member.java
+ com.javastates.MiniServer.domain.member.Member
+com/javastates/MiniServer/service/AuthService.java
+ com.javastates.MiniServer.service.AuthService
+com/javastates/MiniServer/respository/MemberMemoryRespository.java
+ com.javastates.MiniServer.respository.MemberMemoryRespository
+com/javastates/MiniServer/domain/member/SignUpDTO.java
+ com.javastates.MiniServer.domain.member.SignUpDTO
+com/javastates/MiniServer/respository/MovieRespository.java
+ com.javastates.MiniServer.respository.MovieRespository
+com/javastates/MiniServer/domain/reservation/Reservation.java
+ com.javastates.MiniServer.domain.reservation.Reservation
+com/javastates/MiniServer/service/MovieService.java
+ com.javastates.MiniServer.service.MovieService
+com/javastates/MiniServer/domain/member/ConfigVO.java
+ com.javastates.MiniServer.domain.member.ConfigVO
+com/javastates/MiniServer/respository/ReservationRespository.java
+ com.javastates.MiniServer.respository.ReservationRespository
+com/javastates/MiniServer/respository/MemberRespository.java
+ com.javastates.MiniServer.respository.MemberRespository
+com/javastates/MiniServer/service/MemberService.java
+ com.javastates.MiniServer.service.MemberService
+com/javastates/MiniServer/controller/MemberController.java
+ com.javastates.MiniServer.controller.MemberController
+com/javastates/MiniServer/service/AuthServiceImpl.java
+ com.javastates.MiniServer.service.AuthServiceImpl
 com/javastates/MiniServer/respository/MovieMemoryRespository.java
  com.javastates.MiniServer.respository.MovieMemoryRespository
  com.javastates.MiniServer.respository.MovieMemoryRespository$1
-com/javastates/MiniServer/service/AuthService.java
- com.javastates.MiniServer.service.AuthService
-com/javastates/MiniServer/service/AuthServiceImpl.java
- com.javastates.MiniServer.service.AuthServiceImpl
-com/javastates/MiniServer/domain/member/Member.java
- com.javastates.MiniServer.domain.member.Member
-com/javastates/MiniServer/domain/reservation/Reservation.java
- com.javastates.MiniServer.domain.reservation.Reservation
+com/javastates/MiniServer/respository/ReservationMemoryRespository.java
+ com.javastates.MiniServer.respository.ReservationMemoryRespository
 com/javastates/MiniServer/service/MovieServiceImpl.java
  com.javastates.MiniServer.service.MovieServiceImpl
 com/javastates/MiniServer/service/MemberServiceImpl.java
  com.javastates.MiniServer.service.MemberServiceImpl
-com/javastates/MiniServer/domain/member/ConfigVO.java
- com.javastates.MiniServer.domain.member.ConfigVO
+com/javastates/MiniServer/service/ReservationServiceImpl.java
+ com.javastates.MiniServer.service.ReservationServiceImpl
+com/javastates/MiniServer/controller/MovieController.java
+ com.javastates.MiniServer.controller.MovieController
+com/javastates/MiniServer/controller/ExceptionController.java
+ com.javastates.MiniServer.controller.ExceptionController
 com/javastates/MiniServer/controller/ReservationController.java
  com.javastates.MiniServer.controller.ReservationController
-com/javastates/MiniServer/controller/MemberController.java
- com.javastates.MiniServer.controller.MemberController
-com/javastates/MiniServer/respository/MemberMemoryRespository.java
- com.javastates.MiniServer.respository.MemberMemoryRespository
-com/javastates/MiniServer/respository/MovieRespository.java
- com.javastates.MiniServer.respository.MovieRespository
-com/javastates/MiniServer/service/MovieService.java
- com.javastates.MiniServer.service.MovieService
-com/javastates/MiniServer/respository/MemberRespository.java
- com.javastates.MiniServer.respository.MemberRespository
-com/javastates/MiniServer/respository/ReservationRespository.java
- com.javastates.MiniServer.respository.ReservationRespository
-com/javastates/MiniServer/domain/movie/Movie.java
- com.javastates.MiniServer.domain.movie.Movie
+com/javastates/MiniServer/ServletInitializer.java
+ com.javastates.MiniServer.ServletInitializer
+com/javastates/MiniServer/controller/AuthController.java
+ com.javastates.MiniServer.controller.AuthController
+com/javastates/MiniServer/MiniServerApplication.java
+ com.javastates.MiniServer.MiniServerApplication

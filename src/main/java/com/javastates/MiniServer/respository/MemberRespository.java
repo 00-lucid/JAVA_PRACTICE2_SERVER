@@ -1,5 +1,6 @@
 package com.javastates.MiniServer.respository;
 
+import com.javastates.MiniServer.domain.member.ConfigVO;
 import com.javastates.MiniServer.domain.member.Member;
 
 import java.util.*;
@@ -16,5 +17,6 @@ public interface MemberRespository {
 
     String getToken(String userName, String userPw);
 
-    Member update(UUID uuid, Object object);
+
+    Member update(UUID uuid, String userName);
 }

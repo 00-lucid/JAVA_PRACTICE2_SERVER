@@ -11,25 +11,16 @@ public class ReservationMemoryRespository implements ReservationRespository{
     Map<UUID, Reservation> uuidReservationMap = new HashMap<>();
     @Override
     public void save(Reservation reservation) {
-        try {
             uuidReservationMap.put(UUID.randomUUID(), reservation);
-        } catch (Exception e) {
-            return;
-        }
     }
 
     @Override
     public Reservation findReservationById(UUID uuid) {
-        try {
             return uuidReservationMap.get(uuid);
-        } catch (Exception e) {
-            return null;
-        }
     }
 
     @Override
     public ArrayList<Reservation> findAllReservation() {
-        try {
             ArrayList<Reservation> reservationArrayList = new ArrayList<>();
 
             for (UUID key : uuidReservationMap.keySet()) {
@@ -37,9 +28,6 @@ public class ReservationMemoryRespository implements ReservationRespository{
             }
 
             return reservationArrayList;
-        } catch (Exception e) {
-            return null;
-        }
     }
 
     // 특정 영화의 예약정보([1, 2, 3])을 가져오는 함수가 필요하다.
@@ -48,7 +36,6 @@ public class ReservationMemoryRespository implements ReservationRespository{
 
     @Override
     public ArrayList<Reservation> findMovieReservation(String movieName) {
-        try {
             ArrayList<Reservation> reservationArrayList = new ArrayList<>();
 
             for (UUID key : uuidReservationMap.keySet()) {
@@ -59,8 +46,5 @@ public class ReservationMemoryRespository implements ReservationRespository{
             }
 
             return reservationArrayList;
-        } catch (Exception e) {
-            return null;
-        }
     }
 }
